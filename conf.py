@@ -10,9 +10,10 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import os
+import sys
+
+sys.path.append(os.path.abspath('./_extensions'))
 
 
 # -- Project information -----------------------------------------------------
@@ -28,7 +29,24 @@ author = 'natersoz'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx.ext.autodoc',
+    'todo'
 ]
+
+
+# The suffix of source filenames.
+source_suffix = '.rst'
+
+# The master toctree document.
+master_doc = 'content/index'
+
+# The version info for the project you're documenting, acts as replacement for
+# |version| and |release|, also used in various other places throughout the
+# built documents.
+version='0.0.0'
+
+# The full version, including alpha/beta/rc tags.
+release=''
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -38,6 +56,11 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
+# If true, `todo` and `todoList` produce output, else they produce nothing.
+todo_include_todos = True
+
+# Add figure numbering
+numfig = True
 
 # -- Options for HTML output -------------------------------------------------
 
